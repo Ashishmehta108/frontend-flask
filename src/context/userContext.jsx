@@ -17,7 +17,7 @@ const UserProvider = ({ children }) => {
       const formData = new FormData();
       formData.append("resume", file);
 
-      const response = await fetch("http://127.0.0.1:5000/genai-parse", {
+      const response = await fetch(`${import.meta.env.VITE_BASE_URL}/genai-parse`, {
         method: "POST",
         body: formData,
       });
